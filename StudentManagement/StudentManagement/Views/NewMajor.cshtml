@@ -1,0 +1,101 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using StudentManagement.Models;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>New Major</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
+          rel="stylesheet" />
+    <style>
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+    </style>
+</head>
+<body class="bg-dark">
+    <section class="h-100 bg-dark">
+        <form id="form1" class="form1" action="/admin/newmajors" method="post">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col">
+                        <div class="card card-registration my-4">
+                            <div class="row g-0">
+                                
+                                <div class="col-xl-12">
+                                    <div class="card-body p-md-5 text-black">
+                                        @if (ViewBag.suc != null)
+                                        {
+                                            <h3 class="mb-3 text-uppercase">Add new Major</h3>
+
+                                            <div class="mb-2" style="color:red;"><span>@ViewBag.Suc</span></div>
+                                        }
+                                        else
+                                        {
+                                            <h3 class="mb-5 text-uppercase">Add new Major</h3>
+                                        }
+                                        <div class="form-outline mb-4">
+                                            <input name="mid" type="text" id="form3Example90" class="form-control form-control-lg" required />
+                                            <label class="form-label" for="form3Example90">MajorID</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input name="name" type="text" id="form3Example90" class="form-control form-control-lg" required />
+                                            <label class="form-label" for="form3Example90">MajorName</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input name="desc" type="text" id="form3Example8" class="form-control form-control-lg" required />
+                                            <label class="form-label" for="form3Example8">Major DESC</label>
+                                        </div>
+
+                                        
+                                        <div class="d-flex justify-content-end pt-3">
+                                            <button type="button" class="btn btn-warning btn-lg" onclick="window.location='/student/home'">Home</button>
+                                            <button type="button" class="btn btn-light btn-lg ms-2" onclick="window.location='/admin/majorlist'">Back</button>
+                                            <button id="btnsubmit" name="submit" value="submit" type="submit" class="btn btn-warning btn-lg ms-2">Add new Major</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </section>
+    <script>
+            function myFunction() {
+                document.getElementById("form1").submit();
+        };
+    </script>
+
+</body>
+
+<!-- MDB -->
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
+</html>
